@@ -152,16 +152,20 @@ const Index = () => {
           </div>
 
           <div className="flex items-center space-x-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-gray-300 hover:text-white"
-            >
-              Login
-            </Button>
-            <Button size="sm" className="glass-button text-white">
-              Sign Up
-            </Button>
+            <Link to="/login">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-gray-300 hover:text-white"
+              >
+                Login
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button size="sm" className="glass-button text-white">
+                Sign Up
+              </Button>
+            </Link>
           </div>
         </div>
       </nav>
@@ -238,20 +242,24 @@ const Index = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3"
-              >
-                Get Started as Client
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="glass-button text-white border-white/20 px-8 py-3"
-              >
-                Join as Lawyer
-              </Button>
+              <Link to="/signup">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3"
+                >
+                  Get Started as Client
+                  <ChevronRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <Link to="/signup">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="glass-button text-white border-white/20 px-8 py-3"
+                >
+                  Join as Lawyer
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -403,12 +411,14 @@ const Index = () => {
                     <span className="text-lg font-bold text-white">
                       {lawyer.fees}
                     </span>
-                    <Button
-                      size="sm"
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-                    >
-                      Book Now
-                    </Button>
+                    <Link to={`/lawyer/${lawyer.id}`}>
+                      <Button
+                        size="sm"
+                        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                      >
+                        Book Now
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
